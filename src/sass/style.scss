@@ -57,22 +57,39 @@ textarea {
   margin-top: 55px;
 
   display: grid;
-  grid-template-columns: 350px 1fr 1fr;
+  grid-template-columns: 700px 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
 }
 
   .textarea {
     resize: none;
   }
 
-.stats {
+.stat {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
-}
+  &--words {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+  }
 
-  .stat {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  &--characters {
+    grid-column: 3 / -1;
+    grid-row: 1 / 2;
+  }
+
+  &--twitter {
+    grid-column: 2 / 3;
+    grid-row: 2 / -1;
+  }
+
+  &--facebook {
+    grid-column: 3 / -1;
+    grid-row: 2 / -1;
+  }
 
     &__number {
 
@@ -92,7 +109,7 @@ textarea {
       
       }
     }
-  }
+}
 
     .second-heading {
 
