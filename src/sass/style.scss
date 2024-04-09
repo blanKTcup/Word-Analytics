@@ -55,6 +55,7 @@ textarea {
   border-radius: 10px;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
   margin-top: 55px;
+  overflow: hidden;
 
   display: grid;
   grid-template-columns: 700px 1fr 1fr;
@@ -82,26 +83,38 @@ textarea {
   align-items: center;
 
   &--words {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    
     grid-column: 2 / 3;
     grid-row: 1 / 2;
   }
 
   &--characters {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    border-left: 1px solid rgba(0, 0, 0, 0.08);
+
     grid-column: 3 / -1;
     grid-row: 1 / 2;
   }
 
   &--twitter {
+
     grid-column: 2 / 3;
     grid-row: 2 / -1;
   }
 
   &--facebook {
+    border-left: 1px solid rgba(0, 0, 0, 0.08);
+
     grid-column: 3 / -1;
     grid-row: 2 / -1;
   }
 
     &__number {
+      color: #4d5457;
+      font-weight: 600;
+      font-size: 35px;
+      margin-bottom: 10px;
 
       &--words {
       
@@ -122,12 +135,16 @@ textarea {
 }
 
     .second-heading {
-
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 500;
+      color: #747a7c;
     }
 
 .footer {
   width: 1050px;
-  margin-top: 15px;
+  margin-top: 15px 0;
   
   display: flex;
   justify-content: space-between;
