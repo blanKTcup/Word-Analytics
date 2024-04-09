@@ -1,0 +1,47 @@
+{
+  "name": "project",
+  "version": "0.1.0",
+  "main": "public/index.html",
+  "scripts": {
+    "start": "npm-run-all copy --parallel watch serve",
+    "copy": "npm-run-all --parallel copy:*",
+    "copy:html": "copyfiles -u 1 ./src/*.html public",
+    "copy:js": "copyfiles -u 1 ./src/*.js public",
+    "watch": "npm-run-all --parallel watch:*",
+    "watch:html": "onchange \"src/*.html\" -- npm run copy:html",
+    "watch:sass": "sass --no-source-map --watch src/sass:public/css",
+    "watch:js": "onchange \"src/*.js\" -- npm run copy:js",
+    "serve": "browser-sync start --server public --files public",
+    "build": "npm-run-all copy --parallel build:*",
+    "build:html": "html-minifier-terser ./src/index.html --collapse-whitespace --output=public/index.html",
+    "build:sass": "sass --no-source-map src/sass:public/css",
+    "build:css": "postcss public/css/*.css --use autoprefixer cssnano postcss-pxtorem --output public/css/style.css --no-map",
+    "build:js": "npm-run-all transpile-js --parallel minify-js",
+    "transpile-js": "babel ./public/*.js -o ./public/script.js --presets=@babel/preset-env",
+    "minify-js": "uglifyjs ./public/*.js --compress -o ./public/script.js"
+  },
+  "dependencies": {
+    "browser-sync": "^2.27.7",
+    "copyfiles": "^2.4.1",
+    "npm-run-all": "^4.1.5",
+    "onchange": "^7.1.0",
+    "sass": "^1.49.8"
+  },
+  "author": "Kevin",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.24.1",
+    "@babel/core": "^7.24.4",
+    "@babel/preset-env": "^7.24.4",
+    "autoprefixer": "^10.4.19",
+    "cssnano": "^6.1.2",
+    "html-minifier-terser": "^7.2.0",
+    "i": "^0.3.7",
+    "npm": "^10.5.1",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.38",
+    "postcss-cli": "^11.0.0",
+    "postcss-pxtorem": "^6.1.0",
+    "uglify-js": "^3.17.4"
+  }
+}
