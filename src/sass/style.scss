@@ -26,7 +26,7 @@ textarea {
   position: absolute;
   top: 0;
   z-index: -1;
-  height: 254px;
+  min-height: 15.875rem;
   width: 100%;
   background-image: linear-gradient(
     to right, 
@@ -37,11 +37,11 @@ textarea {
 }
 
 .first-heading {
-  font-size: 65px;
-  letter-spacing: 5px;
+  font-size: 4.0625rem;
+  letter-spacing: .1em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.92);
-  margin-top: 75px;
+  margin-top: 4.6875rem;
 
   &--special {
     font-weight: 300;
@@ -49,12 +49,13 @@ textarea {
 }
 
 .app {
-  width: 1050px;
-  height: 520px;
+  width: 100%;
+  max-width: 65.625rem;
+  min-height: 32.5rem;
   background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
-  margin-top: 55px;
+  border-radius: .625rem;
+  box-shadow: 0 .25rem .25rem rgba(0, 0, 0, 0.1);
+  margin-top: 3.4375rem;
   overflow: hidden;
 
   display: grid;
@@ -65,8 +66,8 @@ textarea {
   .textarea {
     resize: none;
     font: inherit;
-    padding: 30px 40px;
-    font-size: 22px;
+    padding: 1.875rem 2.5rem;
+    font-size: 1.375rem;
 
     grid-column: 1 / 2;
     grid-row: 1 / -1;
@@ -86,15 +87,15 @@ textarea {
   align-items: center;
 
   &--words {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    border-bottom: .0625rem solid rgba(0, 0, 0, 0.08);
     
     grid-column: 2 / 3;
     grid-row: 1 / 2;
   }
 
   &--characters {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-    border-left: 1px solid rgba(0, 0, 0, 0.08);
+    border-bottom: .0625rem solid rgba(0, 0, 0, 0.08);
+    border-left: .0625rem solid rgba(0, 0, 0, 0.08);
 
     grid-column: 3 / -1;
     grid-row: 1 / 2;
@@ -106,7 +107,7 @@ textarea {
   }
 
   &--facebook {
-    border-left: 1px solid rgba(0, 0, 0, 0.08);
+    border-left: .0625rem solid rgba(0, 0, 0, 0.08);
 
     grid-column: 3 / -1;
     grid-row: 2 / -1;
@@ -115,8 +116,8 @@ textarea {
     &__number {
       color: #4d5457;
       font-weight: 600;
-      font-size: 35px;
-      margin-bottom: 10px;
+      font-size: 2.1875rem;
+      margin-bottom: .625rem;
 
       &--limit {
         color: red;
@@ -140,17 +141,18 @@ textarea {
     }
 
     &__type {
-      font-size: 14px;
+      font-size: .875rem;
       text-transform: uppercase;
-      letter-spacing: 2px;
+      letter-spacing: .125em;
       font-weight: 500;
       color: #747a7c;
     }
 }
 
 .footer {
-  width: 1050px;
-  margin: 15px 0;
+  width: 100%;
+  max-width: 65.625rem;
+  margin: .9375rem 0;
   opacity: 0.4;
   
   display: flex;
@@ -166,9 +168,9 @@ textarea {
   }
 
 // MEDIA QUERIES
-@media (max-width: 1150px) {
+@media (max-width: 71.875rem) {
   .app {
-    width: 85vw;
+    max-width: 85vw;
 
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 3fr 1fr;
@@ -185,7 +187,7 @@ textarea {
 
   .stat {
     border: none;
-    padding: 15px 10px;
+    padding: .9375rem .625rem;
 
     &--words {
       grid-column: 1 / 2;
@@ -208,7 +210,7 @@ textarea {
     }
 
       &__number {
-        font-size: 20px;
+        font-size: 1.25rem;
       }
   }
 
@@ -216,6 +218,6 @@ textarea {
     width: initial;
     flex-direction: column;
     align-items: center;
-    gap: 5px;
+    gap: .3125rem;
   }
 }
