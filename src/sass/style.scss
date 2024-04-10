@@ -68,6 +68,9 @@ textarea {
     padding: 30px 40px;
     font-size: 22px;
 
+    grid-column: 1 / 2;
+    grid-row: 1 / -1;
+
     &::placeholder {
       font-weight: 500;
       color: #959c9f;
@@ -115,6 +118,10 @@ textarea {
       font-size: 35px;
       margin-bottom: 10px;
 
+      &--limit {
+        color: red;
+      }
+
       &--words {
       
       }
@@ -124,11 +131,11 @@ textarea {
       }
 
       &--twitter {
-      
+        
       }
 
       &--facebook {
-      
+
       }
     }
 }

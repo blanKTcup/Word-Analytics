@@ -20,5 +20,9 @@ textareaEL.addEventListener('input', () => {
   const facebookCharLeft = 2200 - numberOfCharacters;
   facebookStatEl.textContent = facebookCharLeft;
 
-  // 
+  // over limit styling
+  if (twitterCharLeft < 0 && facebookCharLeft < 0) {
+    twitterStatEl.classList.add('stat__number--limit');
+    facebookStatEl.classList.add('stat__number--limit');
+  }
 });
