@@ -58,7 +58,7 @@ textarea {
   overflow: hidden;
 
   display: grid;
-  grid-template-columns: 700px 1fr 1fr;
+  grid-template-columns: 4fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
 }
 
@@ -98,7 +98,6 @@ textarea {
   }
 
   &--twitter {
-
     grid-column: 2 / 3;
     grid-row: 2 / -1;
   }
@@ -159,3 +158,57 @@ textarea {
 
   }
 
+// MEDIA QUERIES
+@media (max-width: 1150px) {
+  .app {
+    width: 85vw;
+
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 3fr 1fr;
+    grid-auto-flow: row;
+  }
+
+  .first-heading {
+    font-size: 7vw;
+  }
+
+  .textarea {
+    grid-column: 1 / -1;
+  }
+
+  .stat {
+    border: none;
+    padding: 15px 10px;
+
+    &--words {
+      grid-column: 1 / 2;
+      grid-row: 2 / -1;
+    }
+  
+    &--characters {
+      grid-column: 2 / 3;
+      grid-row: 2 / -1;
+    }
+  
+    &--twitter {
+      grid-column: 3 / 4;
+      grid-row: 2 / -1;
+    }
+  
+    &--facebook {
+      grid-column: 4 / -1;
+      grid-row: 2 / -1;
+    }
+
+      &__number {
+        font-size: 20px;
+      }
+  }
+
+  .footer {
+    width: initial;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+}
