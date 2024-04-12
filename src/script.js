@@ -18,11 +18,11 @@ textareaEL.addEventListener('input', () => {
   charactersStatEl.textContent = numberOfCharacters;
 
   // twitter
-  const twitterCharLeft = twitterStatEl.innerHTML - numberOfCharacters;
+  const twitterCharLeft = 280 - numberOfCharacters;
   twitterStatEl.textContent = twitterCharLeft;
 
   // facebook
-  const facebookCharLeft = facebookStatEl.innerHTML - numberOfCharacters;
+  const facebookCharLeft = 2200 - numberOfCharacters;
   facebookStatEl.textContent = facebookCharLeft;
 
   // over limit styling
