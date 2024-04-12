@@ -6,6 +6,11 @@ const facebookStatEl = document.querySelector('.stat__number--facebook');
 
 
 textareaEL.addEventListener('input', () => {
+  if (textareaEL.value.includes('<script>')) {
+    alert('You cannot use <script> in your text.');
+    textareaEL.value = textareaEL.value.replace('<script>', '');
+  }
+  
   // words
   let numberOfWords = textareaEL.value.split(' ').length;
   if (textareaEL.value.length === 0 ) {
