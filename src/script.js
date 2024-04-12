@@ -4,8 +4,7 @@ const charactersStatEl = document.querySelector('.stat__number--characters');
 const twitterStatEl = document.querySelector('.stat__number--twitter');
 const facebookStatEl = document.querySelector('.stat__number--facebook');
 
-
-textareaEL.addEventListener('input', () => {
+const inputHandler = () => {
   if (textareaEL.value.includes('<script>')) {
     alert('You cannot use <script> in your text.');
     textareaEL.value = textareaEL.value.replace('<script>', '');
@@ -42,4 +41,6 @@ textareaEL.addEventListener('input', () => {
   } else {
     facebookStatEl.classList.remove('stat__number--limit');
   }
-});
+};
+
+textareaEL.addEventListener('input', inputHandler);
