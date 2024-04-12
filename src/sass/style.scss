@@ -73,6 +73,8 @@ textarea {
 
 	.textarea {
 		resize: none;
+    overflow: hidden;
+    word-break: break-all;
 		flex: 2;
 		font: inherit;
 		padding: 1.875rem 2.5rem;
